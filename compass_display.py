@@ -4,12 +4,16 @@ import board
 import adafruit_mmc56x3
 from displayhatmini import DisplayHATMini
 
-# 1. Initialize Display HAT Mini
-# Resolution is 320x240 pixels
-buffer = DisplayHATMini()
-width, height = 320, 240
-image = Image.new("RGB", (width, height), color=(0, 0, 0))
-draw = ImageDraw.Draw(image)
+# 1. First, define the dimensions based on the HAT properties
+width = DisplayHATMini.WIDTH    # 320
+height = DisplayHATMini.HEIGHT  # 240
+
+# 2. Next, create the PIL Image buffer 
+buffer = Image.new("RGB", (width, height), color=(0, 0, 0))
+draw = ImageDraw.Draw(buffer)
+
+# 3. Finally, pass the buffer straight into the HAT initialization
+hat = DisplayHATMini(buffer)
 
 # Load a default font
 try:
