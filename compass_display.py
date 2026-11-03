@@ -39,6 +39,8 @@ try:
         # Read magnetometer vector values (in micro-Teslas)
         mag_x, mag_y, mag_z = sensor.magnetic
         temp = sensor.temperature
+
+        print("magnetometer readings x {}, y {}, z {}, temp {} ".format(mag_x, mag_y, mag_z, temp))
         
         # Draw text to image buffer
         draw.text((10, 10), "MMC5603 Magnetometer", font=font_title, fill=(255, 255, 255))
