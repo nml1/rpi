@@ -7,6 +7,8 @@ from displayhatmini import DisplayHATMini
 # 1. First, define the dimensions based on the HAT properties
 width = DisplayHATMini.WIDTH    # 320
 height = DisplayHATMini.HEIGHT  # 240
+print(width)
+print(height)
 
 # 2. Next, create the PIL Image buffer 
 buffer = Image.new("RGB", (width, height), color=(0, 0, 0))
