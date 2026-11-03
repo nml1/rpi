@@ -11,8 +11,16 @@ print(width)
 print(height)
 
 # 2. Next, create the PIL Image buffer 
-buffer = Image.new("RGB", (width, height), color=(0, 0, 0))
+buffer = Image.new("RGB", (width, height), color=(255, 0, 0))
 draw = ImageDraw.Draw(buffer)
+
+# Initialize with lower speed
+hat = DisplayHATMini(buffer, spi_speed_hz=16000000)
+
+print("Displaying solid red screen...")
+hat.display()
+time.sleep(5)
+
 
 # 3. Finally, pass the buffer straight into the HAT initialization
 hat = DisplayHATMini(buffer)
@@ -56,7 +64,7 @@ try:
         buffer.display(image)
         
         # Refresh rate delay
-        time.sleep(0.2)
+        time.sleep(5)
 
 except KeyboardInterrupt:
     # Clear display upon safe exit
