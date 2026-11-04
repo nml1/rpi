@@ -115,6 +115,7 @@ try:
 
 except KeyboardInterrupt:
     # Clear display upon clean exit
-    # draw.rectangle((0, 0, width, height), fill=(0, 0, 0))
-    # disp.display(buffer)
+    time.sleep(10)
+    draw.rectangle((0, 0, width, height), fill=(0, 0, 0))
+    disp.display(buffer)
     print("\nProgram closed cleanly.")
