@@ -4,7 +4,7 @@ import os
 from PIL import Image, ImageDraw, ImageFont
 import board
 import adafruit_mmc56x3
-import ST7789 as ST7789
+import st7789 as ST7789
 from gpiozero import Button  # Added for hardware button tracking
 
 # 1. Define Display HAT Mini dimensions
