@@ -91,13 +91,14 @@ try:
             avg_x2 = (tot_x2 / loopcnt) ** 0.5
             avg_y2 = (tot_y2 / loopcnt) ** 0.5
             avg_z2 = (tot_z2 / loopcnt) ** 0.5
+            avg_xyz2 = avg_x2 + avg_y2 + avg_z2
           # Write text layout onto the buffer
             draw.text((10, 10), "MMC5603 Magnetometer", font=font_title, fill=(255, 255, 255))
             draw.line((10, 38, 310, 38), fill=(100, 100, 100), width=1)
             draw.text((20, 60),  f"X Axis: av {avg_x:8.2f} av2 {avg_x2:8.2f} uT", font=font_data, fill=(255, 100, 100))
             draw.text((20, 100), f"Y Axis: av {avg_y:8.2f} av2 {avg_y2:8.2f} uT", font=font_data, fill=(100, 255, 100))
             draw.text((20, 140), f"Z Axis: av {avg_z:8.2f} av2 {avg_z2:8.2f} uT", font=font_data, fill=(100, 100, 255))
-            draw.text((20, 190), f"Temp:    {temp:6.1f} °C loopcnt {loopcnt:3.0f}", font=font_data, fill=(240, 180, 50))
+            draw.text((20, 190), f"Temp: {temp:6.1f} °C Sum2 {avg_xyz2:8.2f}", font=font_data, fill=(240, 180, 50))
             loopcnt = 0
             tot_x2 = 0
             tot_y2 = 0
